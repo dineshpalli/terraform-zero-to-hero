@@ -1,0 +1,26 @@
+# Ignore all Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Ignore local Terraform directories (providers, modules, etc.)
+.terraform/
+
+# Ignore SSH private keys
+*.pem
+
+# Ignore compressed files
+*.zip
+
+# Ignore variable files that may contain secrets
+# *.tfvars
+
+# Ignore user scripts (if sensitive or specific to local env)
+userdata*.sh
+
+# Ignore VS Code settings (optional if sharing workspace config)
+*.code-workspace
+
+# Ignore backup or temp files
+*~ 
+*.bak
+*.tmp
