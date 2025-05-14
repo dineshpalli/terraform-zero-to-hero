@@ -1,0 +1,30 @@
+          ┌────────────────────────┐
+          │      provider.tf       │
+          │ (AWS provider config)  │
+          └────────┬───────────────┘
+                   │
+                   ▼
+          ┌────────────────────────┐
+          │     variables.tf       │
+          │  (Input variables)     │
+          └────────┬───────────────┘
+                   │
+                   ▼
+          ┌────────────────────────┐
+          │        main.tf         │
+          │ - EC2 resource block   │
+          │ - References vars      │
+          │ - Attaches user_data   │
+          └────────┬───────────────┘
+                   │
+       ┌───────────┴────────────┐
+       ▼                        ▼
+┌─────────────┐         ┌──────────────┐
+│ userdata.sh │         │ userdata1.sh │
+│ (Boot setup)│         │ (Alt script) │
+└─────────────┘         └──────────────┘
+       ▼
+┌────────────────────────────┐
+│   EC2 instance launches    │
+│   and runs the script      │
+└────────────────────────────┘
